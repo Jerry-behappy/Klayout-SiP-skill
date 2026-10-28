@@ -21,7 +21,7 @@ description: Design, inspect, edit, repair, annotate, route, analyze, and verify
 2. 使用安装完整库环境的 D:\KLayout\klayout_app.exe -b -r 读取版图。独立 Python pya 只能辅助检查，不能单独证明 PCell 或 library 关联有效。
 3. 检查 dbu、顶层、层列表、cell 层级、PCell/library 状态、实例变换、端口和圈选标记。可先运行 scripts/inspect_layout.py。
 4. 构造显式目标集合，并在写入前验证数量、名称、参数或几何特征。目标不明确时停止，不做范围外猜测。
-5. 记录不变量：非目标实例多重集合、关键层几何、父级关系、阵列参数、顶层 bbox、端口和原文件哈希。
+5. 按任务记录不变量：非目标实例多重集合、关键层几何、父级关系、阵列参数、顶层 bbox 和端口。常规任务不默认生成哈希；仅在用户、项目要求或会影响下一步判断时使用。
 6. 用任务脚本实施修改。新增 Python 文件运行 py_compile。
 7. 先写同目录临时 GDS，再用 KLayout 重新读取并验证；通过后才另存或用 os.replace 原位替换。失败时删除临时文件并保留原文件。
 8. 报告目标数量、实际映射、输出路径、保留项和重读结果，不把非致命 GDS 警告冒充成功验证。
@@ -32,6 +32,7 @@ description: Design, inspect, edit, repair, annotate, route, analyze, and verify
 - 执行实例替换、波导绘制、spiral 绘制、文字编辑、器件放置、端口连接、标注排序或曲率分析时，读取 [references/editing-workflows.md](references/editing-workflows.md)。
 - 使用 marker layer、递归层级、阵列、重复实例或几何模式识别目标时，读取 [references/selection-and-hierarchy.md](references/selection-and-hierarchy.md)。
 - 设计验证、哈希、不变量和原位覆盖流程时，读取 [references/verification.md](references/verification.md)。
+- 处理交换网络、等长/等弯曲数、复合波导分宽度计长、减少弯曲或压缩阵列间距时，读取 [references/routing-and-matching.md](references/routing-and-matching.md)。
 - 修复移相器金属走线、旧版波导或延时回形针时，读取 [references/connection-repair.md](references/connection-repair.md)。
 
 ## 工具入口

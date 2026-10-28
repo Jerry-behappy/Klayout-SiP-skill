@@ -22,6 +22,8 @@ REQUIRED = (
     Path("references/editing-workflows.md"),
     Path("references/selection-and-hierarchy.md"),
     Path("references/verification.md"),
+    Path("references/routing-and-matching.md"),
+    Path("references/connection-repair.md"),
     Path("scripts/inspect_layout.py"),
     Path("scripts/sync_skill_links.py"),
 )
