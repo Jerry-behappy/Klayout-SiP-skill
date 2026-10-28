@@ -32,6 +32,7 @@ description: Design, inspect, edit, repair, annotate, route, analyze, and verify
 - 执行实例替换、波导绘制、spiral 绘制、文字编辑、器件放置、端口连接、标注排序或曲率分析时，读取 [references/editing-workflows.md](references/editing-workflows.md)。
 - 使用 marker layer、递归层级、阵列、重复实例或几何模式识别目标时，读取 [references/selection-and-hierarchy.md](references/selection-and-hierarchy.md)。
 - 设计验证、哈希、不变量和原位覆盖流程时，读取 [references/verification.md](references/verification.md)。
+- 修复移相器金属走线、旧版波导或延时回形针时，读取 [references/connection-repair.md](references/connection-repair.md)。
 
 ## 工具入口
 
