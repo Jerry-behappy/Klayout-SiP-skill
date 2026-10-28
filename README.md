@@ -25,7 +25,7 @@ klayout-sip-skill 是一个面向硅光版图的 Codex skill。它支持在 KLay
 ### 工作流程
 
 1. 修改前检查源版图的 DBU、顶层 cell、图层、层级、PCell 和库状态、目标实例及端口。
-2. 明确目标集合，并记录父级关系、变换、阵列、关键几何、边界框和哈希等不变量。
+2. 明确目标集合，并按任务记录父级关系、变换、阵列、关键几何和边界框；哈希仅在有明确需要时使用。
 3. 先在同目录写入临时版图。
 4. 使用完整 KLayout 运行时重新读取输出，验证目标对象与保留不变量。
 5. 验证通过后再另存或替换原文件，并报告目标数量、输出路径、映射关系与重读结果。
@@ -34,6 +34,8 @@ klayout-sip-skill 是一个面向硅光版图的 Codex skill。它支持在 KLay
 
 - SKILL.md：权威工作流和按需读取说明。
 - references/：通用版图约定、编辑流程、层级与选择指导，以及验证要求。
+- references/routing-and-matching.md：复合波导容量、分宽度等长、弯曲数和阵列压缩。
+- references/connection-repair.md：光电连接修复、回形针补偿与严格等长验收。
 - scripts/inspect_layout.py：批处理版图检查脚本。
 - scripts/sync_skill_links.py：创建并检查指向本规范目录的 Codex 与 Claude skill 目录链接。
 - agents/openai.yaml：agent 元数据。
@@ -76,7 +78,7 @@ This skill consumes and edits silicon-photonic layouts. It does not change PDK s
 ### Working Model
 
 1. Inspect the source layout before changing it: DBU, top cells, layers, hierarchy, PCell and library state, target instances, and ports.
-2. Define an explicit target set and record invariants such as parent relationships, transforms, arrays, key geometry, bounding boxes, and hashes.
+2. Define the target set and relevant invariants: parent relationships, transforms, arrays, key geometry and bounding boxes. Use hashes only when explicitly needed.
 3. Write modifications to a temporary layout in the same directory.
 4. Reload the output with the full KLayout runtime and verify the requested targets and preserved invariants.
 5. Only then save the result or replace the original file. Report the target count, output path, mappings, and reload result.
@@ -85,6 +87,8 @@ This skill consumes and edits silicon-photonic layouts. It does not change PDK s
 
 - SKILL.md: the authoritative workflow and routing instructions.
 - references/: layout conventions, editing procedures, hierarchy and selection guidance, and verification requirements.
+- references/routing-and-matching.md: composite-waveguide capacity, length matching by width, bend counts, and array compaction.
+- references/connection-repair.md: optical and electrical connection repair, paperclip compensation, and strict length verification.
 - scripts/inspect_layout.py: batch layout inspection helper.
 - scripts/sync_skill_links.py: creates and validates the Codex and Claude directory links that point to this canonical skill folder.
 - agents/openai.yaml: agent metadata.

@@ -33,6 +33,8 @@
 4. 复合波导按直段容量放置 taper。若半径或直段不足，先列出问题线段；继续生成时每条 Path 使用统一最大可行半径，固定 taper 仍无法容纳的 Path 不转换。
 5. 用户要求保留既有波导时，不重建任何 `Waveguide*` cell；只修改用户允许的器件、文字、连接器或实例变换。
 
+等长/等弯曲数、复合宽度容量和阵列压缩按 [routing-and-matching.md](routing-and-matching.md) 处理。优先从 PDK Waveguide to Path 恢复原始路径，局部修改后再由 Path to Waveguide 生成对应 PCell；不要用重画多边形替代可编辑波导。
+
 ## Bend、S Bend 与自动连接
 
 - 90° Bend 的三种形状都应保持端口 `(0,0) -> (R,R)` 的语义；验证时关注端口位置、方向和 10 nm 端部 landing，而不是只看 bbox。

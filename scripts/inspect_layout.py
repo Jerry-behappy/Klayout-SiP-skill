@@ -2,7 +2,6 @@
 """在完整 KLayout 环境中检查 GDS/OASIS、PCell 和可选 marker layer。"""
 
 import collections
-import hashlib
 import json
 import os
 
@@ -11,6 +10,7 @@ import pya
 
 def file_hash(path):
     """计算输入文件的 SHA-256。"""
+    import hashlib
     digest = hashlib.sha256()
     with open(path, "rb") as handle:
         for block in iter(lambda: handle.read(1024 * 1024), b""):
@@ -94,7 +94,6 @@ def main():
     report = {
         "input_file": path,
         "size_bytes": os.path.getsize(path),
-        "sha256": file_hash(path),
         "dbu_um": layout.dbu,
         "cell_count": layout.cells(),
         "top_cells": [
@@ -108,6 +107,9 @@ def main():
         "layers": layers,
         "pcell_variants": dict(sorted(pcell_counter.items())),
     }
+    # Opt in only when the caller needs file integrity evidence.
+    if str(globals().get("include_file_hash", "false")).strip().lower() in ("1", "true", "yes"):
+        report["sha256"] = file_hash(path)
 
     marker_value = globals().get("marker_layer", "")
     if str(marker_value).strip():
