@@ -33,6 +33,7 @@ description: Design, inspect, edit, repair, annotate, route, analyze, and verify
 - 使用 marker layer、递归层级、阵列、重复实例或几何模式识别目标时，读取 [references/selection-and-hierarchy.md](references/selection-and-hierarchy.md)。
 - 设计验证、哈希、不变量和原位覆盖流程时，读取 [references/verification.md](references/verification.md)。
 - 处理交换网络、等长/等弯曲数、复合波导分宽度计长、减少弯曲或压缩阵列间距时，读取 [references/routing-and-matching.md](references/routing-and-matching.md)。
+- 缩短 MMI/taper 之间的 S 弯阵列、核对等 Y 间距与阵列中心、按最小半径约束压缩横向距离时，读取 [references/sbend-bundles.md](references/sbend-bundles.md)。可使用 `scripts/compact_sbend_bundle.py`，公共原生验收函数位于 `scripts/layout_checks.py`。
 - 修复移相器金属走线、旧版波导或延时回形针时，读取 [references/connection-repair.md](references/connection-repair.md)。
 
 ## 工具入口

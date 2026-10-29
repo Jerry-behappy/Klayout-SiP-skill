@@ -24,7 +24,10 @@ REQUIRED = (
     Path("references/verification.md"),
     Path("references/routing-and-matching.md"),
     Path("references/connection-repair.md"),
+    Path("references/sbend-bundles.md"),
     Path("scripts/inspect_layout.py"),
+    Path("scripts/compact_sbend_bundle.py"),
+    Path("scripts/layout_checks.py"),
     Path("scripts/sync_skill_links.py"),
 )
 

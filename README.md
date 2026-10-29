@@ -37,6 +37,9 @@ klayout-sip-skill 是一个面向硅光版图的 Codex skill。它支持在 KLay
 - references/routing-and-matching.md：复合波导容量、分宽度等长、弯曲数和阵列压缩。
 - references/connection-repair.md：光电连接修复、回形针补偿与严格等长验收。
 - scripts/inspect_layout.py：批处理版图检查脚本。
+- scripts/compact_sbend_bundle.py：以 JSON job 缩短 S 弯阵列，严格检查 PDK 最小曲率半径并重连公共端。
+- scripts/layout_checks.py：可复用的实例/图形比较、光端口连续性和硅层相交验收。
+- references/sbend-bundles.md：S 弯压缩配置，以及 taper 等 Y 间距和 MMI 居中的口径。
 - scripts/sync_skill_links.py：创建并检查指向本规范目录的 Codex 与 Claude skill 目录链接。
 - agents/openai.yaml：agent 元数据。
 
@@ -90,6 +93,9 @@ This skill consumes and edits silicon-photonic layouts. It does not change PDK s
 - references/routing-and-matching.md: composite-waveguide capacity, length matching by width, bend counts, and array compaction.
 - references/connection-repair.md: optical and electrical connection repair, paperclip compensation, and strict length verification.
 - scripts/inspect_layout.py: batch layout inspection helper.
+- scripts/compact_sbend_bundle.py: JSON-configured S-bend bundle compaction with strict PDK minimum-radius checks and common-port reconnection.
+- scripts/layout_checks.py: reusable instance/shape comparisons, optical continuity, and Si-intersection checks.
+- references/sbend-bundles.md: compaction job configuration, taper Y pitch, and MMI centering conventions.
 - scripts/sync_skill_links.py: creates and validates the Codex and Claude directory links that point to this canonical skill folder.
 - agents/openai.yaml: agent metadata.
 
