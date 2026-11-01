@@ -20,7 +20,7 @@ description: Design, inspect, edit, repair, annotate, route, analyze, and verify
 1. 明确输入文件、输出策略、目标对象和必须保持不变的内容。默认另存；所有新生成或修改后另存的 GDS 文件名必须以 `_vN.gds` 结尾，并按已有版本递增；只有用户明确要求时才原位覆盖。版本起点与递增规则见 references/layout-conventions.md。
 2. 使用安装完整库环境的 D:\KLayout\klayout_app.exe -b -r 读取版图。独立 Python pya 只能辅助检查，不能单独证明 PCell 或 library 关联有效。
 3. 检查 dbu、顶层、层列表、cell 层级、PCell/library 状态、实例变换、端口和圈选标记。可先运行 scripts/inspect_layout.py。
-4. 构造显式目标集合，并在写入前验证数量、名称、参数或几何特征。目标不明确时停止，不做范围外猜测。
+4. 构造显式目标集合，并在写入前验证数量、名称、参数或几何特征。目标不明确时停止，不做范围外猜测。 多路或重复结构先规划共享 cell 层级，先完成最小重复单元再通过实例逐级组合；按 references/selection-and-hierarchy.md 组织可维护层级。
 5. 按任务记录不变量：非目标实例多重集合、关键层几何、父级关系、阵列参数、顶层 bbox 和端口。常规任务不默认生成哈希；仅在用户、项目要求或会影响下一步判断时使用。
 6. 用任务脚本实施修改。新增 Python 文件运行 py_compile。
 7. 先写同目录临时 GDS，再用 KLayout 重新读取并验证；通过后才另存或用 os.replace 原位替换。失败时删除临时文件并保留原文件。
