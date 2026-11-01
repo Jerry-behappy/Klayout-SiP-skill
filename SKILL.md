@@ -17,7 +17,7 @@ description: Design, inspect, edit, repair, annotate, route, analyze, and verify
 
 ## 强制工作流
 
-1. 明确输入文件、输出策略、目标对象和必须保持不变的内容。默认另存；只有用户明确要求时才原位覆盖。
+1. 明确输入文件、输出策略、目标对象和必须保持不变的内容。默认另存；所有新生成或修改后另存的 GDS 文件名必须以 `_vN.gds` 结尾，并按已有版本递增；只有用户明确要求时才原位覆盖。版本起点与递增规则见 references/layout-conventions.md。
 2. 使用安装完整库环境的 D:\KLayout\klayout_app.exe -b -r 读取版图。独立 Python pya 只能辅助检查，不能单独证明 PCell 或 library 关联有效。
 3. 检查 dbu、顶层、层列表、cell 层级、PCell/library 状态、实例变换、端口和圈选标记。可先运行 scripts/inspect_layout.py。
 4. 构造显式目标集合，并在写入前验证数量、名称、参数或几何特征。目标不明确时停止，不做范围外猜测。
@@ -34,6 +34,10 @@ description: Design, inspect, edit, repair, annotate, route, analyze, and verify
 - 设计验证、哈希、不变量和原位覆盖流程时，读取 [references/verification.md](references/verification.md)。
 - 处理交换网络、等长/等弯曲数、复合波导分宽度计长、减少弯曲或压缩阵列间距时，读取 [references/routing-and-matching.md](references/routing-and-matching.md)。
 - 修复移相器金属走线、旧版波导或延时回形针时，读取 [references/connection-repair.md](references/connection-repair.md)。
+
+## 本机用户文件约定
+
+- 所有新生成或修改后另存的 GDS，文件名末尾必须带递增 `_vN` 版本号（紧接 `.gds` 之前），包括首次生成的文件；先检查已有版本并保留旧版。具体版本起点与命名示例见 references/layout-conventions.md。
 
 ## 工具入口
 
