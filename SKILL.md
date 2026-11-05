@@ -34,6 +34,7 @@ description: Design, inspect, edit, repair, annotate, route, analyze, and verify
 - 设计验证、哈希、不变量和原位覆盖流程时，读取 [references/verification.md](references/verification.md)。
 - 处理交换网络、等长/等弯曲数、复合波导分宽度计长、减少弯曲或压缩阵列间距时，读取 [references/routing-and-matching.md](references/routing-and-matching.md)。
 - 修复移相器金属走线、旧版波导或延时回形针时，读取 [references/connection-repair.md](references/connection-repair.md)。
+- 新增或加宽金属馈线、移动焊盘以缩短引线，或采用 Diagonal 金属布线时，读取 [references/metal-routing.md](references/metal-routing.md)。
 
 ## 本机用户文件约定
 
